@@ -1,0 +1,46 @@
+[
+    {
+        "taskID": "3b6eaf6d-3d1c-43d9-be20-c0130967e236",
+        "task": "I have some doubts in boosting in ML. Help me clear my doubts."
+    },
+    {
+        "taskID": "ba129fac-e4c3-422b-a8c0-c23fd3812dd3",
+        "task": "I have some doubts in random forest.Can you help me solve them?"
+    },
+    {
+        "taskID": "6cf793df-a490-452e-80c2-90e9011699d3",
+        "task": "I have some doubts in random forest.Can you help me solve them?"
+    },
+    {
+        "taskID": "49a6d1f2-bb0e-49f0-8648-c62b241053d6",
+        "task": "I have some doubts in random forest.Can you help me solve them?"
+    },
+    {
+        "taskID": "82e10b7f-ea0e-4a92-96fb-ba997212d207",
+        "task": "I have some doubts in random forest.Can you help me solve them?"
+    },
+    {
+        "taskID": "2e663073-80ee-459b-9b46-e7f1bfe3ea27",
+        "task": "I have some doubts in random forest.Can you help me solve them?"
+    },
+    {
+        "taskID": "41d56646-d423-47a1-b0f8-04e0aca41017",
+        "task": "Hello, I have some doubts in the concept of Boosting. Can you provide me a step by step explanation along with some internet resources like some blogs?"
+    },
+    {
+        "taskID": "14fbad24-7775-4bf0-8e72-f5c6a1af5ab0",
+        "task": "My name is Ameya. I actually have some doubts in the concept of decision trees. Which of the two: gini impurity or entropy is a better measure?"
+    },
+    {
+        "taskID": "6505ec84-c72b-444d-bc63-eb67f15eda59",
+        "task": "I am a beginner in AI/ML. Make me a schedule for a week where I can study decision trees, ensemble methods and neural networks along with links to some assignments for the same topics."
+    },
+    {
+        "taskID": "f6d3763d-a970-4ca0-ba15-5d892ad29b43",
+        "task": "hello i am priyanshi. i want to learn DSA. suggest me some good resources"
+    },
+    {
+        "taskID": "15601dd7-a83b-4465-a565-74fda4132067",
+        "task": "My name is Ameya. I actually have some doubts in the concept of decision trees. Which of the two: gini impurity or entropy is a better measure?"
+    }
+]

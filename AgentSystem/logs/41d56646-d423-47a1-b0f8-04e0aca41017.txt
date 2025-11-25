@@ -1,0 +1,875 @@
+surfer initialized
+---------- TextMessage (user) ----------
+Execute the following task using the tools available to agents. If no relevant tool is available, simulate the functionality of the tool or you can access the internet or use your own knowledge for the task. Do not ask the user for clarification or further inputs. For every task, make sure to contact and take advice from the relevant agents from the learning assistant system.Task: Hello, I have some doubts in the concept of Boosting. Can you provide me a step by step explanation along with some internet resources like some blogs?Avoid using beautifulsoup for fetching urls. They do not usually work. Make sure the links provided are working by asking the websurfer to read the page that gets displayed.If the links don't work, ask the websurfer to simply get any links that you can find.
+---------- TextMessage (MagenticOneOrchestrator) ----------
+
+We are working to address the following user request:
+
+Execute the following task using the tools available to agents. If no relevant tool is available, simulate the functionality of the tool or you can access the internet or use your own knowledge for the task. Do not ask the user for clarification or further inputs. For every task, make sure to contact and take advice from the relevant agents from the learning assistant system.Task: Hello, I have some doubts in the concept of Boosting. Can you provide me a step by step explanation along with some internet resources like some blogs?Avoid using beautifulsoup for fetching urls. They do not usually work. Make sure the links provided are working by asking the websurfer to read the page that gets displayed.If the links don't work, ask the websurfer to simply get any links that you can find.
+
+
+To answer this request we have assembled the following team:
+
+adaptive_learning_agent: An agent that provides assistance with ability to use tools.
+progress_tracking_agent: An agent that provides assistance with ability to use tools.
+assessment_agent: An agent that provides assistance with ability to use tools.
+concept_clarification_agent: An agent that provides assistance with ability to use tools.
+reminder_and_notification_manager_agent: An agent that provides assistance with ability to use tools.
+WebSurfer: A helpful assistant with access to a web browser. Ask them to perform web searches, open pages, and interact with content (e.g., clicking links, scrolling the viewport, filling in form fields, etc.). It can also summarize the entire page, or answer questions based on the content of the page. It can also be asked to sleep and wait for pages to load, in cases where the page seems not yet fully loaded.
+Coder: A helpful and general-purpose AI assistant that has strong language skills, Python skills, and Linux command line skills.
+
+
+Here is an initial fact sheet to consider:
+
+**1. GIVEN OR VERIFIED FACTS**
+
+*   The user has doubts about the concept of Boosting.
+*   The user wants a step-by-step explanation.
+*   The user wants internet resources like blogs.
+*   The user does not want to use BeautifulSoup.
+*   The user wants verification that the links are working via the websurfer tool.
+*   If links don't work, the user wants the websurfer to find any links available.
+*   The agent should contact and take advice from relevant agents from the learning assistant system.
+
+**2. FACTS TO LOOK UP**
+
+*   Step-by-step explanations of the Boosting algorithm (various websites, blogs, educational resources).
+*   Internet resources (blogs, articles, tutorials) explaining Boosting (via web search).
+*   The current availability and content of specific URLs found during web searches. This will be done using the websurfer tool as requested.
+
+**3. FACTS TO DERIVE**
+
+*   A coherent and understandable explanation of Boosting, synthesized from various sources.
+*   A determination of whether the websurfer tool can successfully access and display the content of identified URLs.
+*   If initial URLs don't work, find alternative working URLs for information on Boosting.
+
+**4. EDUCATED GUESSES**
+
+*   The user likely has some basic understanding of machine learning concepts, but lacks a deep understanding of Boosting's mechanics.
+*   The user will find external blog posts on boosting to be helpful to their education.
+
+
+
+Here is the plan to follow as best as possible:
+
+Okay, here's a bullet-point plan to address the user's request, considering the team composition and the pre-survey results:
+
+*   **Consult with relevant agents:** Primarily, I will consult with the `concept_clarification_agent` to help structure the explanation of Boosting and ensure it's clear and understandable. I may also consult with the `adaptive_learning_agent` to tailor the explanation based on potential assumed knowledge levels.
+*   **Craft a Step-by-Step Explanation:** Based on my knowledge and agent advice, I will create a clear, step-by-step explanation of the Boosting algorithm.
+*   **Search for Relevant Resources:** Use the `WebSurfer` to find relevant blog posts and articles explaining Boosting. I will prioritize high-quality sources and varied perspectives.
+*   **Verify Link Functionality:** Instruct the `WebSurfer` to access each identified URL and confirm it's working and displaying relevant content. If a link is broken, ask the `WebSurfer` to find alternative links related to the topic.
+*   **Present Information to User:** Deliver the step-by-step explanation and the validated links to the user.
+
+
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Could you provide a structured outline or key points to cover in the explanation of boosting? Consider that the user has some background in ML, but needs to know more about boosting.
+---------- TextMessage (concept_clarification_agent) ----------
+Okay, here's a structured outline of key points to cover when explaining Boosting, designed for someone with some ML background but needing a deeper understanding of Boosting:
+
+**I. Introduction to Boosting**
+
+*   **What is Boosting?**
+    *   A meta-algorithm (ensemble method) that combines multiple weak learners into a strong learner.
+    *   Focuses on sequentially improving model performance by weighting misclassified instances.
+*   **Key Idea:**
+    *   Each new model focuses on the mistakes made by previous models.
+*   **Contrast with Bagging (e.g., Random Forest):**
+    *   Bagging trains independent models in parallel.
+    *   Boosting trains sequential models, where each model depends on the previous ones.
+*   **Benefits of Boosting:**
+    *   Improved accuracy compared to single models.
+    *   Ability to handle complex relationships in data.
+
+**II. Core Concepts & Mechanics**
+
+*   **Weak Learners:**
+    *   Typically, decision trees with shallow depth (e.g., decision stumps - trees with only one split).
+    *   Why weak learners are preferred in boosting.
+*   **Weighted Instances:**
+    *   Each instance in the training data is assigned a weight.
+    *   Weights are adjusted after each boosting round to prioritize misclassified instances.
+*   **Sequential Training:**
+    *   Models are trained iteratively.
+    *   Each model learns from the errors of its predecessors.
+*   **Model Weighting (Combining Weak Learners):**
+    *   Each weak learner is assigned a weight based on its performance.
+    *   More accurate learners have higher weights.
+    *   The final prediction is a weighted combination of the predictions from all weak learners.
+
+**III. Common Boosting Algorithms**
+
+*   **AdaBoost (Adaptive Boosting):**
+    *   How AdaBoost adjusts instance weights and model weights.
+    *   Mathematical formulation (simplified, focusing on the intuition).
+*   **Gradient Boosting:**
+    *   Boosting as a gradient descent optimization problem.
+    *   How Gradient Boosting uses residuals (errors) to train subsequent models.
+    *   Common loss functions used in Gradient Boosting.
+*   **XGBoost, LightGBM, CatBoost:**
+    *   Brief overview of these popular Gradient Boosting implementations.
+    *   Key advantages and features of each (e.g., regularization, handling missing values, categorical feature support).
+
+**IV. Step-by-Step Example (Simplified)**
+
+*   **Illustrative Example:**
+    *   Use a simple dataset (e.g., binary classification with a few data points).
+    *   Walk through one or two boosting rounds:
+        1.  Initialize instance weights.
+        2.  Train a weak learner.
+        3.  Calculate model weight based on accuracy.
+        4.  Update instance weights (increase weights for misclassified instances).
+        5.  Train the next weak learner on the updated weights.
+*   **Emphasis on intuition, not complex math.**
+
+**V. Advantages and Disadvantages of Boosting**
+
+*   **Advantages:**
+    *   High accuracy.
+    *   Versatile (can be used for classification and regression).
+*   **Disadvantages:**
+    *   Can be prone to overfitting (especially without proper regularization).
+    *   Can be sensitive to noisy data.
+    *   Computationally expensive (compared to simpler algorithms).
+
+**VI. Hyperparameter Tuning & Regularization**
+
+*   **Key Hyperparameters:**
+    *   Number of estimators (number of weak learners).
+    *   Learning rate (shrinkage).
+    *   Maximum depth of trees.
+    *   Regularization parameters (L1, L2).
+*   **Techniques to prevent overfitting:**
+    *   Cross-validation.
+    *   Early stopping.
+    *   Regularization.
+
+**VII. Practical Considerations**
+
+*   **Feature Importance:** How Boosting algorithms provide feature importance scores.
+*   **When to Use Boosting:** Scenarios where Boosting is a good choice (e.g., structured data, high accuracy requirements).
+*   **Tools and Libraries:** scikit-learn, XGBoost, LightGBM, CatBoost.
+
+**VIII. Conclusion**
+
+*   **Summary of Key Concepts.**
+*   **Reiterate the power and flexibility of Boosting.**
+*   **Encourage further exploration and experimentation.**
+
+Now that I have this outline, I'll consult with the `concept_clarification_agent` to refine it and make sure it is easy to follow.
+
+```tool_code
+print(concept_clarification_agent.review_explanation_plan(explanation_plan=explanation_plan))
+```
+
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please review the following outline for explaining boosting to someone with some ML background but needing a deeper understanding of boosting. Let me know your feedback and suggestions for improvement:
+
+**I. Introduction to Boosting**
+
+*   **What is Boosting?**
+    *   A meta-algorithm (ensemble method) that combines multiple weak learners into a strong learner.
+    *   Focuses on sequentially improving model performance by weighting misclassified instances.
+*   **Key Idea:**
+    *   Each new model focuses on the mistakes made by previous models.
+*   **Contrast with Bagging (e.g., Random Forest):**
+    *   Bagging trains independent models in parallel.
+    *   Boosting trains sequential models, where each model depends on the previous ones.
+*   **Benefits of Boosting:**
+    *   Improved accuracy compared to single models.
+    *   Ability to handle complex relationships in data.
+
+**II. Core Concepts & Mechanics**
+
+*   **Weak Learners:**
+    *   Typically, decision trees with shallow depth (e.g., decision stumps - trees with only one split).
+    *   Why weak learners are preferred in boosting.
+*   **Weighted Instances:**
+    *   Each instance in the training data is assigned a weight.
+    *   Weights are adjusted after each boosting round to prioritize misclassified instances.
+*   **Sequential Training:**
+    *   Models are trained iteratively.
+    *   Each model learns from the errors of its predecessors.
+*   **Model Weighting (Combining Weak Learners):**
+    *   Each weak learner is assigned a weight based on its performance.
+    *   More accurate learners have higher weights.
+    *   The final prediction is a weighted combination of the predictions from all weak learners.
+
+**III. Common Boosting Algorithms**
+
+*   **AdaBoost (Adaptive Boosting):**
+    *   How AdaBoost adjusts instance weights and model weights.
+    *   Mathematical formulation (simplified, focusing on the intuition).
+*   **Gradient Boosting:**
+    *   Boosting as a gradient descent optimization problem.
+    *   How Gradient Boosting uses residuals (errors) to train subsequent models.
+    *   Common loss functions used in Gradient Boosting.
+*   **XGBoost, LightGBM, CatBoost:**
+    *   Brief overview of these popular Gradient Boosting implementations.
+    *   Key advantages and features of each (e.g., regularization, handling missing values, categorical feature support).
+
+**IV. Step-by-Step Example (Simplified)**
+
+*   **Illustrative Example:**
+    *   Use a simple dataset (e.g., binary classification with a few data points).
+    *   Walk through one or two boosting rounds:
+        1.  Initialize instance weights.
+        2.  Train a weak learner.
+        3.  Calculate model weight based on accuracy.
+        4.  Update instance weights (increase weights for misclassified instances).
+        5.  Train the next weak learner on the updated weights.
+*   **Emphasis on intuition, not complex math.**
+
+**V. Advantages and Disadvantages of Boosting**
+
+*   **Advantages:**
+    *   High accuracy.
+    *   Versatile (can be used for classification and regression).
+*   **Disadvantages:**
+    *   Can be prone to overfitting (especially without proper regularization).
+    *   Can be sensitive to noisy data.
+    *   Computationally expensive (compared to simpler algorithms).
+
+**VI. Hyperparameter Tuning & Regularization**
+
+*   **Key Hyperparameters:**
+    *   Number of estimators (number of weak learners).
+    *   Learning rate (shrinkage).
+    *   Maximum depth of trees.
+    *   Regularization parameters (L1, L2).
+*   **Techniques to prevent overfitting:**
+    *   Cross-validation.
+    *   Early stopping.
+    *   Regularization.
+
+**VII. Practical Considerations**
+
+*   **Feature Importance:** How Boosting algorithms provide feature importance scores.
+*   **When to Use Boosting:** Scenarios where Boosting is a good choice (e.g., structured data, high accuracy requirements).
+*   **Tools and Libraries:** scikit-learn, XGBoost, LightGBM, CatBoost.
+
+**VIII. Conclusion**
+
+*   **Summary of Key Concepts.**
+*   **Reiterate the power and flexibility of Boosting.**
+*   **Encourage further exploration and experimentation.**
+---------- TextMessage (concept_clarification_agent) ----------
+```tool_code
+print(concept_clarification_agent.review_explanation_plan(explanation_plan=explanation_plan))
+```
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please review the outline.
+---------- TextMessage (concept_clarification_agent) ----------
+Okay, I have reviewed the outline and here's my feedback as the `concept_clarification_agent`:
+
+**Overall:**
+
+The outline is very comprehensive and well-structured. It covers all the essential aspects of Boosting, suitable for someone with an existing ML background. The progression from fundamental concepts to practical considerations is logical.
+
+**Specific Suggestions:**
+
+*   **I. Introduction to Boosting:**
+    *   Consider adding a sentence about the historical context of boosting. Mentioning its origins and evolution can add valuable perspective.
+    *   It might be helpful to briefly touch upon *why* boosting achieves higher accuracy. A simple statement that it reduces both bias and variance (compared to a single weak learner) could be beneficial.
+
+*   **II. Core Concepts & Mechanics:**
+    *   In "Weak Learners," explicitly state that they are intentionally *biased*. This highlights the core idea that Boosting trades bias for variance.
+    *   In "Model Weighting," mention common methods for determining model weights (e.g., using the error rate in AdaBoost).
+
+*   **III. Common Boosting Algorithms:**
+    *   For Gradient Boosting, it might be useful to mention that it uses the *negative gradient* of the loss function as the target for each subsequent model. This clarifies the connection to gradient descent.
+    *   When discussing XGBoost, LightGBM, and CatBoost, briefly highlight their key differences in terms of tree-building strategies (e.g., level-wise vs. leaf-wise growth). This will help the user understand their trade-offs.
+
+*   **IV. Step-by-Step Example (Simplified):**
+    *   This is a crucial section. Make sure the example is extremely clear and easy to follow. Consider using a visual aid (e.g., a table) to represent the instance weights and model weights at each iteration.
+
+*   **V. Advantages and Disadvantages of Boosting:**
+    *   Under "Disadvantages," add that Boosting can be difficult to interpret compared to simpler models.
+
+*   **VI. Hyperparameter Tuning & Regularization:**
+    *   Mention the importance of tuning hyperparameters specifically to prevent overfitting.
+
+*   **VII. Practical Considerations:**
+    *   Under "Feature Importance," briefly explain *how* boosting algorithms calculate feature importance (e.g., based on the number of times a feature is used in splits).
+
+**Minor Suggestions:**
+
+*   Throughout the outline, use consistent terminology. For example, stick to either "weak learner" or "base learner."
+*   Consider adding a section on "Applications of Boosting" to showcase real-world use cases.
+
+**Revised Snippets (Examples incorporating suggestions):**
+
+*   **I. Introduction to Boosting:**
+    *   "Boosting is a meta-algorithm... Historically, boosting methods..."
+    *   "Benefits of Boosting: Improved accuracy compared to single models due to reduction in both bias and variance."
+
+*   **II. Core Concepts & Mechanics:**
+    *   "Weak Learners: Typically, decision trees... Weak learners are intentionally *biased*..."
+    *    "Model Weighting: Each weak learner is assigned a weight based on its performance (e.g., in AdaBoost, based on the error rate). More accurate learners have higher weights."
+
+*   **III. Common Boosting Algorithms:**
+     *   "Gradient Boosting: Boosting as a gradient descent optimization problem, where each model tries to fit the *negative gradient* of the loss function."
+     *   "XGBoost, LightGBM, CatBoost: ...key differences in tree-building strategies (e.g., level-wise in XGBoost vs. leaf-wise in LightGBM)."
+
+By incorporating these suggestions, you can make the explanation of Boosting even more clear, insightful, and helpful for the user. Remember the goal is to provide a solid understanding of *why* Boosting works, not just *how* it works.
+
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Find me a few blog posts or articles that explain boosting in a simple way, suitable for someone with some machine learning background. I need the URLs of these resources.
+---------- MultiModalMessage (WebSurfer) ----------
+I typed 'boosting machine learning explained simply blog posts' into the browser search bar.
+
+The web browser is open to the page [boosting machine learning explained simply blog posts - Search](https://www.bing.com/search?q=boosting+machine+learning+explained+simply+blog+posts&FORM=QBLH).
+The viewport shows 26% of the webpage, and is positioned at the top of the page
+The following text is visible in the viewport:
+
+Skip to content
+boosting machine learning explained simply blog posts Rewards 
+MobileAll
+Search
+Copilot
+Images
+Videos
+Maps
+News
+More
+Tools
+About 1,370,000 resultsHere’s how boosting combines weak learners into a strong model:
+Boosting trains models sequentially, where each model corrects the errors made by the previous one.
+Since better-performing models contribute more to the final prediction, the final model is a weighted combination of all previous weak models.
+Unlike bagging (which trains models independently), boosting adapts based on previous mistakes, making it more efficient on challenging datasets.
+Types of Boosting in Machine Learning: AdaBoost Explainedwww.upgrad.com/blog/boosting-in-machine-learning-what-is-functions-types-fea…
+Was this helpful?
+Medium
+https://medium.com › @brijesh_soni › unde…
+Understanding Boosting in Machine Learning: A …May 1, 2023 · Boosting is a machine learning strategy that combines numerous weak learners into strong learners to increase model accuracy. The following are the steps in the boosting algorithm:...
+How to Learn Machine Learning
+https://howtolearnmachinelearning.com › articles › boosting-in-machin…
+Boosting in Machine Learning Explained: An Awesome Introduction!Introduction to Boosting Machine Learning Models
+What Is Boosting in Machine Learning?
+Why Is Boosting So Effective?
+How Is A Boosting Model Trained?
+How Does A Boosting Model Make Predictions?
+Different Boosting Models
+In this post, we will see a simple and intuitive explanation of Boosting algorithms in Machine learning: what they are, why they are so powerful, some of the different types, and how they are trained and used to make predictions. We will avoid all the heavy maths and go for a clear, simple, but in depth explanation that can be easil…See more on howtolearnmachinelearning.comBoostingEnsemble metaheuristic
+In machine learning, boosting is an ensemble metaheuristic for primarily reducing bias. It can also improve the stability and accuracy of ML classification and regression algorithms. Hence, it is prev…Wikipedia
+Statisticians have come forward, laying proofs and theorems as to how this ensemble method works well in improving prediction results.section.io
+The first-ever boosting algorithm was called AdaBoost (Adaptive Boosting) was introduced to the world by Freund and Schapire.This procedure is continued until and unless the errors are minimized, and the dataset is predicted correctly.analyticsvidhya.com
+The principle behind boosting algorithms is first we built a model on the training dataset, then a second model is built to rectify the errors present in the first model.The weak learners that we can identify in the working of AdaBoost are decision trees with a single split. These splits are known as decision stumps for their shortness.pythongeeks.org
+The first realization of boosting that witnessed great success in the application was Adaptive Boosting or AdaBoost for the shorter version.Explore more
+
+The following metadata was extracted from the webpage:
+
+{
+    "meta_tags": {
+        "referrer": "origin-when-cross-origin",
+        "SystemEntropyOriginTrialToken": "A5is4nwJJVnhaJpUr1URgj4vvAXSiHoK0VBbM9fawMskbDUj9WUREpa3JzGAo6xd1Cp2voQEG1h6NQ71AsMznU8AAABxeyJvcmlnaW4iOiJodHRwczovL3d3dy5iaW5nLmNvbTo0NDMiLCJmZWF0dXJlIjoiTXNVc2VyQWdlbnRMYXVuY2hOYXZUeXBlIiwiZXhwaXJ5IjoxNzUzNzQ3MjAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=",
+        "ConfidenceOriginTrialToken": "Aqw360MHzRcmtEVv55zzdIWcTk2BBYHcdBAOysNJZP4qkN8M+5vUq36ITHFVst8LiX36KBZJXB8xvyBgdK2z5Q0AAAB6eyJvcmlnaW4iOiJodHRwczovL2JpbmcuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJmb3JtYW5jZU5hdmlnYXRpb25UaW1pbmdDb25maWRlbmNlIiwiZXhwaXJ5IjoxNzYwNDAwMDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=",
+        "og:description": "Intelligent search from Bing makes it easier to quickly find what you\u2019re looking for and rewards you.",
+        "og:site_name": "Bing",
+        "og:title": "boosting machine learning explained simply blog posts - Bing",
+        "og:url": "https://www.bing.com/search?q=boosting+machine+learning+explained+simply+blog+posts&FORM=QBLH",
+        "fb:app_id": "3732605936979161",
+        "og:image": "http://www.bing.com/sa/simg/facebook_sharing_5.png",
+        "og:type": "website",
+        "og:image:width": "600",
+        "og:image:height": "315"
+    }
+}
+
+Here is a screenshot of the page.
+<image>
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please visit the following URLs and tell me if they are working and displaying content related to boosting explained simply: 
+1. https://www.upgrad.com/blog/boosting-in-machine-learning-what-is-functions-types-fea...
+2. https://medium.com/@brijesh_soni/unde...
+3. https://howtolearnmachinelearning.com/articles/boosting-in-machin...
+---------- MultiModalMessage (WebSurfer) ----------
+I typed 'https://www.upgrad.com/blog/boosting-in-machine-learning-what-is-functions-types-fea...' into the browser address bar.
+
+The web browser is open to the page [One-stop Destination for your entire Study Abroad Journey | upGrad Abroad](https://www.upgrad.com/blog/boosting-in-machine-learning-what-is-functions-types-fea...).
+The viewport shows 28% of the webpage, and is positioned at the top of the page
+The following text is visible in the viewport:
+
+For working professionals
+For fresh graduates
+Study abroad
+More
+Free Courses
+Sign Up
+View AllView AllExecutive Doctor of Business Administration from SSBMDoctorate in Business Administration by Edgewood CollegeDoctorate of Business Administration (DBA) from ESGCI, ParisDoctor of Business Administration From Golden Gate UniversityDoctor of Business Administration from Rushford Business School, SwitzerlandView AllDBA in Emerging Technologies with Concentration in Generative AIDBA in Digital Leadership from Golden Gate University, San FranciscoView AllView AllExecutive Diploma in Machine Learning and AIMaster’s Degree in Artificial Intelligence and Data ScienceMaster of Science in Machine Learning & AIDBA in Emerging Technologies with Concentration in Generative AIView AllExecutive Programme in Generative AI for LeadersAdvanced Certificate Program in Generative AIGen AI Foundations Certificate Program from MicrosoftGen AI Mastery Certificate for Data AnalysisGen AI Mastery Certificate for Software DevelopmentGen AI Mastery Certificate for Managerial ExcellenceView AllView AllMBA from Paris School of BusinessMBA from Golden Gate University, San FranciscoMBA by Liverpool Business School (IMT Pathway)Post Graduate Diploma in Management (BIMTECH)MBA from OP Jindal-Career Acceleration ProgramMBA from O.P.Jindal Global UniversityMBA from Edgewood CollegeView AllERROR 404
+Sorry, we can’t find the page you’re looking for
+GET THE ANDROID APP
+
+The following metadata was extracted from the webpage:
+
+{
+    "jsonld": [
+        "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"upGrad\",\"url\":\"https://www.upgrad.com/\",\"sameAs\":[\"https://www.facebook.com/UpGradGlobal\",\"https://www.linkedin.com/company/ueducation\",\"https://www.youtube.com/channel/UCO3pT4ZI8x2RVqYWxxcrZsw\"]}",
+        "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://www.upgrad.com/blog/boosting-in-machine-learning-what-is-functions-types-fea.../\",\"url\":\"https://www.upgrad.com/blog/boosting-in-machine-learning-what-is-functions-types-fea.../\",\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://www.upgrad.com/\",\"url\":\"https://www.upgrad.com/\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"upGrad\",\"url\":\"https://www.upgrad.com/\",\"sameAs\":[\"https://www.facebook.com/upGradGlobal/\",\"https://x.com/upGrad_Edu\",\"https://www.instagram.com/upgrad_edu/\",\"https://www.linkedin.com/company/ueducation/\"],\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://assets.upgrad.com/1923/_next/static/media/upgrad-header-logo.325f003e.svg\",\"width\":900,\"height\":900}}}"
+    ],
+    "meta_tags": {
+        "viewport": "width=device-width, initial-scale=1.0 user-scalable=no",
+        "facebook-domain-verification": "6nozxi3l0jsyntr470p6cs7hsu8sfh",
+        "robots": "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1",
+        "description": "Upgrad Abroad is an Online Platform for International Studies. With Upgrad Abroad you begin your learning journey online & then on campus abroad. \u2713 Dedicated Students Mentors \u2713 Industry Mentorship \u2713Q&A Forums \u2713Live Expert Sessions. To know more, talk to our counselors today, call 18002102030",
+        "og:title": "One-stop Destination for your entire Study Abroad Journey | upGrad Abroad",
+        "og:description": "Upgrad Abroad is an Online Platform for International Studies. With Upgrad Abroad you begin your learning journey online & then on campus abroad. \u2713 Dedicated Students Mentors \u2713 Industry Mentorship \u2713Q&A Forums \u2713Live Expert Sessions. To know more, talk to our counselors today, call 18002102030",
+        "og:url": "https://www.upgrad.com",
+        "og:type": "website",
+        "og:locale": "en-IN",
+        "og:site_name": "upGrad blog",
+        "next-head-count": "14",
+        "referrer": "origin",
+        "format-detection": "telephone=yes",
+        "theme-color": "#fff"
+    }
+}
+
+Here is a screenshot of the page.
+<image>
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please visit the following URLs and tell me if they are working and displaying content related to boosting explained simply:
+2. https://medium.com/@brijesh_soni/unde...
+3. https://howtolearnmachinelearning.com/articles/boosting-in-machin...
+---------- MultiModalMessage (WebSurfer) ----------
+I typed 'https://medium.com/@brijesh_soni/unde...' into the browser address bar.
+
+The web browser is open to the page [Medium](https://medium.com/@brijesh_soni/unde...).
+The viewport shows 95% of the webpage, and is positioned at the top of the page
+The following text is visible in the viewport:
+
+Write
+Sign up
+Sign inPAGE NOT FOUND
+404Out of nothing, something.
+You can find (just about) anything on 
+Medium
+ — apparently even a page that doesn’t exist. Maybe these stories will take you somewhere new?
+HomeHow to publish your design ideas on Medium
+Fabricio Teixeira in The Medium BlogMay 19, 2025
+·7 min read
+The Tyranny of Thirty
+Jason ShenMay 14, 2025
+·6 min read
+Member-only
+Things You Learn from Skimming 1350 Academic Journal Articles
+James Horton, Ph.D in The AcademicMay 19, 2025
+·9 min read
+Member-only
+From Blank Page to Book Deal
+Sophie Lucido JohnsonMay 15, 2025
+·14 min read
+Member-only
+
+The following metadata was extracted from the webpage:
+
+{
+    "meta_tags": {
+        "viewport": "width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1",
+        "theme-color": "#000000",
+        "twitter:app:name:iphone": "Medium",
+        "twitter:app:id:iphone": "828256236",
+        "al:ios:app_name": "Medium",
+        "al:ios:app_store_id": "828256236",
+        "al:android:package": "com.medium.reader",
+        "al:android:app_name": "Medium",
+        "fb:app_id": "542599432471018",
+        "og:site_name": "Medium",
+        "apple-itunes-app": "app-id=828256236, app-argument=/@brijesh_soni/unde..., affiliate-data=ct=smart_app_banner"
+    }
+}
+
+Here is a screenshot of the page.
+<image>
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please visit the following URL and tell me if it is working and displaying content related to boosting explained simply: https://howtolearnmachinelearning.com/articles/boosting-in-machin... If it doesn't work, please provide any links from the initial bing search from your earlier turn.
+---------- MultiModalMessage (WebSurfer) ----------
+I typed 'https://howtolearnmachinelearning.com/articles/boosting-in-machin...' into the browser address bar.
+
+The web browser is open to the page [Boosting in Machine Learning Explained: An Awesome Introduction! 🦸](https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/).
+The viewport shows 7% of the webpage, and is positioned at the top of the page
+The following text is visible in the viewport:
+
+Skip to content
+How to Learn Machine LearningYour repository of resources to learn Machine Learning
+Home
+Articles
+Books
+Online Courses
+Videos
+Tutorials
+Blogs
+Datasets
+Code Snippets
+Other Resources
+Write about AI!
+Newsletter
+Search for:
+What would make this website better?0 / 400
+Next
+
+The following metadata was extracted from the webpage:
+
+{
+    "jsonld": {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#article",
+                "isPartOf": {
+                    "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/"
+                },
+                "author": {
+                    "name": "R.P.F",
+                    "@id": "https://howtolearnmachinelearning.com/#/schema/person/3caa0b653f004114ca30c275363a245a"
+                },
+                "headline": "Boosting in Machine Learning Explained: An Awesome Introduction!",
+                "datePublished": "2020-09-03T16:24:47+00:00",
+                "dateModified": "2021-05-22T11:13:09+00:00",
+                "mainEntityOfPage": {
+                    "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/"
+                },
+                "wordCount": 1844,
+                "publisher": {
+                    "@id": "https://howtolearnmachinelearning.com/#organization"
+                },
+                "image": {
+                    "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#primaryimage"
+                },
+                "thumbnailUrl": "https://howtolearnmachinelearning.com/wp-content/uploads/2020/09/Heroes-scaled.jpeg",
+                "keywords": [
+                    "Articles",
+                    "Boosting Models",
+                    "Ensemble methods",
+                    "Machine Learning"
+                ],
+                "articleSection": [
+                    "Articles"
+                ],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/",
+                "url": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/",
+                "name": "Boosting in Machine Learning Explained: An Awesome Introduction! \ud83e\uddb8",
+                "isPartOf": {
+                    "@id": "https://howtolearnmachinelearning.com/#website"
+                },
+                "primaryImageOfPage": {
+                    "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#primaryimage"
+                },
+                "image": {
+                    "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#primaryimage"
+                },
+                "thumbnailUrl": "https://howtolearnmachinelearning.com/wp-content/uploads/2020/09/Heroes-scaled.jpeg",
+                "datePublished": "2020-09-03T16:24:47+00:00",
+                "dateModified": "2021-05-22T11:13:09+00:00",
+                "description": "\u27be Learn what Boosting in Machine Learning is: one of the most powerful families of Machine Learning models, with this fantastic introduction!",
+                "breadcrumb": {
+                    "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#breadcrumb"
+                },
+                "inLanguage": "en-US",
+                "potentialAction": [
+                    {
+                        "@type": "ReadAction",
+                        "target": [
+                            "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/"
+                        ]
+                    }
+                ]
+            },
+            {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#primaryimage",
+                "url": "https://howtolearnmachinelearning.com/wp-content/uploads/2020/09/Heroes-scaled.jpeg",
+                "contentUrl": "https://howtolearnmachinelearning.com/wp-content/uploads/2020/09/Heroes-scaled.jpeg",
+                "width": 2560,
+                "height": 1706,
+                "caption": "boosting models python"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Portada",
+                        "item": "https://howtolearnmachinelearning.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Boosting in Machine Learning Explained: An Awesome Introduction!"
+                    }
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://howtolearnmachinelearning.com/#website",
+                "url": "https://howtolearnmachinelearning.com/",
+                "name": "How to Learn Machine Learning",
+                "description": "Your repository of resources to learn Machine Learning",
+                "publisher": {
+                    "@id": "https://howtolearnmachinelearning.com/#organization"
+                },
+                "potentialAction": [
+                    {
+                        "@type": "SearchAction",
+                        "target": {
+                            "@type": "EntryPoint",
+                            "urlTemplate": "https://howtolearnmachinelearning.com/?s={search_term_string}"
+                        },
+                        "query-input": {
+                            "@type": "PropertyValueSpecification",
+                            "valueRequired": true,
+                            "valueName": "search_term_string"
+                        }
+                    }
+                ],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://howtolearnmachinelearning.com/#organization",
+                "name": "How to Learn Machine Learning",
+                "url": "https://howtolearnmachinelearning.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "inLanguage": "en-US",
+                    "@id": "https://howtolearnmachinelearning.com/#/schema/logo/image/",
+                    "url": "https://howtolearnmachinelearning.com/wp-content/uploads/2021/12/robot_owl_smaller_pink.png",
+                    "contentUrl": "https://howtolearnmachinelearning.com/wp-content/uploads/2021/12/robot_owl_smaller_pink.png",
+                    "width": 108,
+                    "height": 150,
+                    "caption": "How to Learn Machine Learning"
+                },
+                "image": {
+                    "@id": "https://howtolearnmachinelearning.com/#/schema/logo/image/"
+                },
+                "sameAs": [
+                    "https://x.com/howtolearnmach1"
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://howtolearnmachinelearning.com/#/schema/person/3caa0b653f004114ca30c275363a245a",
+                "name": "R.P.F",
+                "image": {
+                    "@type": "ImageObject",
+                    "inLanguage": "en-US",
+                    "@id": "https://howtolearnmachinelearning.com/#/schema/person/image/",
+                    "url": "https://secure.gravatar.com/avatar/0df9720f28226b6ff22ad133c522b4db453d72fcae9bf2164590344ad217780a?s=96&d=mm&r=g",
+                    "contentUrl": "https://secure.gravatar.com/avatar/0df9720f28226b6ff22ad133c522b4db453d72fcae9bf2164590344ad217780a?s=96&d=mm&r=g",
+                    "caption": "R.P.F"
+                }
+            }
+        ]
+    },
+    "meta_tags": {
+        "viewport": "width=device-width, initial-scale=1",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "description": "\u27be Learn what Boosting in Machine Learning is: one of the most powerful families of Machine Learning models, with this fantastic introduction!",
+        "og:locale": "en_US",
+        "og:type": "article",
+        "og:title": "Boosting in Machine Learning Explained: An Awesome Introduction! \ud83e\uddb8",
+        "og:description": "\u27be Learn what Boosting in Machine Learning is: one of the most powerful families of Machine Learning models, with this fantastic introduction!",
+        "og:url": "https://howtolearnmachinelearning.com/articles/boosting-in-machine-learning/",
+        "og:site_name": "How to Learn Machine Learning",
+        "article:published_time": "2020-09-03T16:24:47+00:00",
+        "article:modified_time": "2021-05-22T11:13:09+00:00",
+        "og:image": "https://howtolearnmachinelearning.com/wp-content/uploads/2020/09/Heroes-scaled.jpeg",
+        "og:image:width": "2560",
+        "og:image:height": "1706",
+        "og:image:type": "image/jpeg",
+        "author": "R.P.F",
+        "twitter:card": "summary_large_image",
+        "twitter:creator": "@howtolearnmach1",
+        "twitter:site": "@howtolearnmach1",
+        "twitter:label1": "Written by",
+        "twitter:data1": "R.P.F",
+        "twitter:label2": "Est. reading time",
+        "twitter:data2": "9 minutes",
+        "generator": "WordPress 6.8.1",
+        "msapplication-TileImage": "https://howtolearnmachinelearning.com/wp-content/uploads/2020/04/robot_owl_smaller_pink-e1603140869778.png"
+    }
+}
+
+Here is a screenshot of the page.
+<image>
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Based on the outline and feedback, create the step-by-step explanation of boosting for the user.
+---------- TextMessage (Coder) ----------
+Okay, here's the step-by-step explanation of Boosting, incorporating the outline and the `concept_clarification_agent`'s feedback, designed for someone with a basic understanding of machine learning:
+
+**I. Introduction to Boosting**
+
+*   **What is Boosting?** Boosting is a meta-algorithm (an algorithm that combines the outputs of other algorithms) and an ensemble method. This means it combines multiple "weak" learning models into one "strong" learner to improve overall performance. Specifically, boosting focuses on sequentially improving model performance by weighting data points that are misclassified. Boosting's origins lie in the desire to create a highly accurate predictor by combining several moderately accurate (weak) predictors.
+*   **Key Idea:** Each new model in the sequence concentrates on correcting the errors made by the previous models. This iterative process allows the ensemble to learn complex patterns and relationships in the data.
+*   **Contrast with Bagging (e.g., Random Forest):** Bagging, like Random Forests, also uses multiple models. However, Bagging trains these models *independently* and *in parallel*. In contrast, Boosting trains its models *sequentially*, with each model depending on the performance of the previous ones. Bagging aims to reduce variance, while boosting primarily aims to reduce bias.
+*   **Benefits of Boosting:** Boosting typically leads to higher accuracy compared to single models because it reduces both bias and variance. It is also capable of handling complex relationships within data.
+
+**II. Core Concepts & Mechanics**
+
+*   **Weak Learners:** Boosting algorithms use what are called "weak learners" as building blocks. These are typically decision trees with limited depth, often just decision stumps (trees with a single split). Weak learners are *intentionally biased*; the goal is not to create perfect individual predictors, but rather to have many diverse, slightly-better-than-random models that can be combined.
+*   **Weighted Instances:** Each data point (instance) in the training data is assigned a weight. These weights represent the importance of each instance during the training process.
+*   **Sequential Training:** Models are trained iteratively in a sequence. The key is that each subsequent model attempts to correct the errors made by its predecessors.
+*   **Model Weighting (Combining Weak Learners):** Each weak learner is assigned a weight based on its performance. More accurate learners receive higher weights. This means their predictions have a greater influence on the final combined prediction. Common methods for determining model weights include using the error rate (e.g., in AdaBoost). The final prediction is a weighted combination of the predictions from all weak learners.
+
+**III. Common Boosting Algorithms**
+
+*   **AdaBoost (Adaptive Boosting):** AdaBoost is one of the earliest and most well-known boosting algorithms. It adapts by adjusting both the instance weights and the model weights. After each model is trained, AdaBoost increases the weights of the misclassified instances, forcing the next model to focus on them. It also assigns weights to each model based on its accuracy. While the mathematical formulation can look complex, the core idea is to give more importance to both the difficult-to-classify instances and the models that perform well.
+*   **Gradient Boosting:** Gradient Boosting frames boosting as a gradient descent optimization problem. Instead of directly adjusting instance weights, Gradient Boosting trains each subsequent model to predict the *residuals* (the errors) of the previous model. It minimizes a loss function by iteratively fitting a new model to the negative gradient of the loss function. Common loss functions include mean squared error (for regression) and log loss (for classification).
+*   **XGBoost, LightGBM, CatBoost:** These are popular and highly optimized implementations of Gradient Boosting. They incorporate various features to improve performance, such as regularization (to prevent overfitting), handling missing values, and native support for categorical features. XGBoost uses level-wise tree growth, while LightGBM uses leaf-wise tree growth (which can lead to faster training but requires careful tuning to avoid overfitting).
+
+**IV. Step-by-Step Example (Simplified)**
+
+Let's imagine a very simple binary classification problem with the following data:
+
+| Instance | Feature 1 | Feature 2 | Class |
+|---|---|---|---|
+| 1 | 1 | 2 | 0 |
+| 2 | 2 | 1 | 0 |
+| 3 | 3 | 3 | 1 |
+| 4 | 4 | 2 | 1 |
+
+1.  **Initialize Instance Weights:** We start by assigning equal weights to all instances. In this case, each instance gets a weight of 0.25 (1/4).
+2.  **Train a Weak Learner:** Let's say our first weak learner is a decision stump that splits on "Feature 1 > 2.5". This correctly classifies instances 3 and 4, but misclassifies instances 1 and 2.
+3.  **Calculate Model Weight:** The model's weight is determined by its accuracy. Let's assume that the model's weight is calculated to be 0.5 (the more accurate, the higher the weight).
+4.  **Update Instance Weights:** We increase the weights of the misclassified instances (1 and 2) and decrease the weights of the correctly classified instances (3 and 4). The exact amount of the update depends on the AdaBoost formula (or the specific Gradient Boosting implementation). Let's say the new weights are: Instance 1: 0.35, Instance 2: 0.35, Instance 3: 0.15, Instance 4: 0.15.
+5.  **Train the Next Weak Learner:** The next weak learner is trained on the *updated* weights. This forces the model to focus more on instances 1 and 2, which were previously misclassified. The process repeats.
+
+(This is a highly simplified example, but it illustrates the core mechanics of boosting).
+
+**V. Advantages and Disadvantages of Boosting**
+
+*   **Advantages:**
+    *   High accuracy: Often achieves state-of-the-art results on a variety of datasets.
+    *   Versatile: Can be used for both classification and regression tasks.
+*   **Disadvantages:**
+    *   Can be prone to overfitting: Especially if the model is too complex or the data is noisy. Requires careful hyperparameter tuning and regularization.
+    *   Sensitive to noisy data: Outliers can have a disproportionate impact on the model.
+    *   Computationally expensive: Training can take longer compared to simpler algorithms.
+    *   Difficult to interpret compared to simpler models.
+
+**VI. Hyperparameter Tuning & Regularization**
+
+*   **Key Hyperparameters:**
+    *   `n_estimators` (or `n_rounds`): The number of weak learners (trees) to combine.
+    *   `learning_rate` (or `shrinkage`): Controls the contribution of each weak learner. Smaller values require more trees.
+    *   `max_depth`: The maximum depth of each tree.
+    *   `reg_alpha` (L1 regularization) and `reg_lambda` (L2 regularization): Penalize model complexity to prevent overfitting.
+*   **Techniques to prevent overfitting:**
+    *   Cross-validation: Evaluate the model's performance on multiple held-out sets to get a more reliable estimate of its generalization ability.
+    *   Early stopping: Monitor the model's performance on a validation set and stop training when the performance starts to degrade.
+    *   Regularization: Add penalties to the loss function to discourage complex models.
+
+It's important to tune these hyperparameters properly, often using techniques like grid search or random search with cross-validation, to achieve optimal performance and prevent overfitting.
+
+**VII. Practical Considerations**
+
+*   **Feature Importance:** Boosting algorithms provide feature importance scores, indicating which features are most influential in the model's predictions. This is typically calculated based on how many times a feature is used in the splits of the trees. This can be helpful for feature selection and understanding the underlying data.
+*   **When to Use Boosting:** Boosting is a good choice when you need high accuracy and have structured data. It's often a good starting point for many machine learning problems.
+*   **Tools and Libraries:**
+    *   `scikit-learn`: Provides basic implementations of AdaBoost and GradientBoostingClassifier/Regressor.
+    *   `XGBoost`: A highly optimized and popular Gradient Boosting library.
+    *   `LightGBM`: Another fast and efficient Gradient Boosting library, particularly well-suited for large datasets.
+    *   `CatBoost`: Gradient Boosting library with native support for categorical features.
+
+**VIII. Conclusion**
+
+Boosting is a powerful and flexible ensemble method that combines multiple weak learners to create a strong learner. It is widely used in machine learning due to its high accuracy and versatility. While it can be prone to overfitting, proper hyperparameter tuning and regularization can mitigate this risk. I encourage you to explore and experiment with different boosting algorithms and libraries to gain a deeper understanding of their capabilities.
+
+Now, I will provide the user with working links for them to follow to augment their studies.
+```tool_code
+print(websurfer.search_web(query='boosting machine learning tutorial for intermediate level'))
+```
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please provide the URLs from your search results for 'boosting machine learning tutorial for intermediate level'. I need a few URLs to check if they are relevant and display useful content about boosting at an intermediate level.
+---------- TextMessage (WebSurfer) ----------
+I am sorry, I cannot fulfill this request. The available tools do not allow me to access previous search results or perform a new search using the information from the current page.
+
+---------- TextMessage (MagenticOneOrchestrator) ----------
+Please search the internet for 'boosting machine learning tutorial intermediate level' and provide the URLs from your search results. Make sure you validate that the URLs you provide are indeed related to this topic and that the links work by displaying the content of the page, and that the page isn't just a 404 error or other unhelpful page.
+---------- MultiModalMessage (WebSurfer) ----------
+I typed 'boosting machine learning tutorial intermediate level' into the browser search bar.
+
+The web browser is open to the page [boosting machine learning tutorial intermediate level - Search](https://www.bing.com/search?q=boosting+machine+learning+tutorial+intermediate+level&FORM=QBLH).
+The viewport shows 24% of the webpage, and is positioned at the top of the page
+The following text is visible in the viewport:
+
+Skip to content
+boosting machine learning tutorial intermediate levelEnglish6
+MobileAll
+Search
+Copilot
+Videos
+Shopping
+Images
+Maps
+More
+Tools
+About 987,000 resultsUdemy
+udemy.comMachine Learning Tutorial - Start Today for FreeSponsored
+Shop thousands of high-quality on-demand online courses. 30-day satisfaction guarantee. Learn online at your own pace. Start today with a special offer.
+Site visitors: Over 1M in the past month
+Browse All Courses
+Online Courses
+Browse Free Courses
+ChatGPT Courses
+All Courses
+Courses for All Levels.
+AI Courses
+Top Leadership Courses
+Videos of Boosting Machine Learning Tutorial Intermediate Level
+bing.com › videos21:18
+Boosting 
+MachineLearning 
+Tutorial | Adaptive 
+Boosting, Gradient 
+Boosting, XGBoost | Edureka
+128.4K viewsJun 27, 2019YouTubeedureka!46:20
+Model Selection & 
+Boosting | 
+Machine 
+LearningTutorial | Data Science 
+Tutorial | Edureka Rewind
+1K viewsMar 18, 2024YouTubeedureka!7:24
+20. Understanding Gradient 
+Boosting: A Powerful 
+Machine 
+Learning Technique
+38 views5 months agoSponsoredMachine Learning Best Tutorialwww.udemy.com
+Join millions of learners from around the world already learning on udemy.
+Learn More
+Related searches
+boosting 
+in machine learning
+machine learning intermediate levels
+machine learning boosting 
+algorithmsintermediate machine learning
+importance of boosting machine learning
+
+The following metadata was extracted from the webpage:
+
+{
+    "meta_tags": {
+        "referrer": "origin-when-cross-origin",
+        "SystemEntropyOriginTrialToken": "A5is4nwJJVnhaJpUr1URgj4vvAXSiHoK0VBbM9fawMskbDUj9WUREpa3JzGAo6xd1Cp2voQEG1h6NQ71AsMznU8AAABxeyJvcmlnaW4iOiJodHRwczovL3d3dy5iaW5nLmNvbTo0NDMiLCJmZWF0dXJlIjoiTXNVc2VyQWdlbnRMYXVuY2hOYXZUeXBlIiwiZXhwaXJ5IjoxNzUzNzQ3MjAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=",
+        "ConfidenceOriginTrialToken": "Aqw360MHzRcmtEVv55zzdIWcTk2BBYHcdBAOysNJZP4qkN8M+5vUq36ITHFVst8LiX36KBZJXB8xvyBgdK2z5Q0AAAB6eyJvcmlnaW4iOiJodHRwczovL2JpbmcuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJmb3JtYW5jZU5hdmlnYXRpb25UaW1pbmdDb25maWRlbmNlIiwiZXhwaXJ5IjoxNzYwNDAwMDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=",
+        "og:description": "Intelligent search from Bing makes it easier to quickly find what you\u2019re looking for and rewards you.",
+        "og:site_name": "Bing",
+        "og:title": "boosting machine learning tutorial intermediate level - Bing",
+        "og:url": "https://www.bing.com/search?q=boosting+machine+learning+tutorial+intermediate+level&FORM=QBLH",
+        "fb:app_id": "3732605936979161",
+        "og:image": "http://www.bing.com/sa/simg/facebook_sharing_5.png",
+        "og:type": "website",
+        "og:image:width": "600",
+        "og:image:height": "315"
+    }
+}
+
+Here is a screenshot of the page.
+<image>
