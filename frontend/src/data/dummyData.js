@@ -1,6 +1,6 @@
-import { User, LearningPath, Progress } from '../types';
 
-export const dummyUser: User = {
+
+export const dummyUser = {
   id: '1',
   name: 'Priyanshi Goyal',
   email: 'pgoyal2_be23@thapar.edu',
@@ -10,7 +10,7 @@ export const dummyUser: User = {
   avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600'
 };
 
-export const dummyLearningPaths: LearningPath[] = [
+export const dummyLearningPaths = [
   {
     id: '1',
     title: 'Web Development Fundamentals',
@@ -265,7 +265,7 @@ export const dummyLearningPaths: LearningPath[] = [
   }
 ];
 
-export const dummyProgress: Progress = {
+export const dummyProgress = {
   userId: '1',
   pathId: '1',
   completed: 2,

@@ -1,19 +1,12 @@
 import React from 'react';
 
-interface SkillsRadarProps {
-  skills: Array<{
-    name: string;
-    level: number; // 0-100
-  }>;
-}
-
-const SkillsRadar: React.FC<SkillsRadarProps> = ({ skills }) => {
+const SkillsRadar = ({ skills }) => {
   // This is a simplified skills radar component
   // In a real app, you'd use a proper chart library for a radar chart
   return (
     <div className="card p-6">
       <h3 className="text-lg font-semibold mb-4">Skill Progress</h3>
-      
+
       <div className="space-y-4">
         {skills.map((skill) => (
           <div key={skill.name} className="space-y-1">
@@ -29,7 +22,7 @@ const SkillsRadar: React.FC<SkillsRadarProps> = ({ skills }) => {
                   'bg-green-500'
                 }`}
                 style={{ width: `${skill.level}%` }}
-              ></div>
+              />
             </div>
           </div>
         ))}

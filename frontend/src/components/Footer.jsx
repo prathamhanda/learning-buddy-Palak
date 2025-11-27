@@ -1,14 +1,14 @@
 import React from 'react';
-import { Compass, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Compass, Mail, MapPin, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Link } from './ui/Link';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white pt-12 pb-8 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-      
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
+
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="group">
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} LearningBuddy. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} LearningBuddy. All rights reserved.</p>
         </div>
       </div>
     </footer>

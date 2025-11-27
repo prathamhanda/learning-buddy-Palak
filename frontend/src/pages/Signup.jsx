@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SignupForm from '../components/SignupForm';
 
-const Signup: React.FC = () => {
+const Signup = () => {
   return (
     <Layout>
       <div className="py-12 bg-gray-50">

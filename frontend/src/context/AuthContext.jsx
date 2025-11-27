@@ -1,14 +1,14 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { User } from '../types';
+const _jsxFileName = "src\\context\\AuthContext.tsx";import React, { createContext, useContext, useState, useEffect } from 'react';
 
-interface AuthContextType {
-  user: User | null;
-  login: (user: User) => void;
-  logout: () => void;
-  isAuthenticated: boolean;
-}
 
-const AuthContext = createContext<AuthContextType>({
+
+
+
+
+
+
+
+const AuthContext = createContext({
   user: null,
   login: () => {},
   logout: () => {},
@@ -17,8 +17,8 @@ const AuthContext = createContext<AuthContextType>({
 
 export const useAuth = () => useContext(AuthContext);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const login = (userData: User) => {
+  const login = (userData) => {
     setUser(userData);
     setIsAuthenticated(true);
     localStorage.setItem('user', JSON.stringify(userData));
@@ -43,8 +43,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isAuthenticated }}>
-      {children}
-    </AuthContext.Provider>
+    React.createElement(AuthContext.Provider, { value: { user, login, logout, isAuthenticated }, __self: this, __source: {fileName: _jsxFileName, lineNumber: 46}}
+      , children
+    )
   );
 };
