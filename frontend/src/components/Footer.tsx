@@ -4,29 +4,30 @@ import { Link } from './ui/Link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-8">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white pt-12 pb-8 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+      
+      <div className="container relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="group">
             <div className="flex items-center space-x-2 mb-4">
-              <Compass className="h-8 w-8 text-blue-400" />
-              <h3 className="text-xl font-bold">EduSmart</h3>
+              <Compass className="h-8 w-8 text-blue-400 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+              <h3 className="text-xl font-bold group-hover:text-blue-400 transition-colors duration-300">LearningBuddy</h3>
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 hover:text-gray-300 transition-colors duration-300">
               Personalized learning journeys tailored to your goals and interests.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="https://www.linkedin.com/in/priyanshigoyal2101/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 hover:scale-110 transition-all duration-300">
+                <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-400 hover:scale-110 transition-all duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300">
+                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -63,57 +64,22 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-medium mb-4">Learning Categories</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/category/web-development" className="text-gray-400 hover:text-white transition-colors">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/data-science" className="text-gray-400 hover:text-white transition-colors">
-                  Data Science
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/mobile-development" className="text-gray-400 hover:text-white transition-colors">
-                  Mobile Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/artificial-intelligence" className="text-gray-400 hover:text-white transition-colors">
-                  Artificial Intelligence
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/cloud-computing" className="text-gray-400 hover:text-white transition-colors">
-                  Cloud Computing
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
             <h4 className="text-lg font-medium mb-4">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-gray-400 mt-0.5" />
-                <span className="text-gray-400">123 Learning Street, Education City, 10001</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">Patiala, Punjab, India</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-400">contact@edusmart.com</span>
+                <span className="text-gray-400">pgoyal2_be23@thapar.edu</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} EduSmart. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} LearningBuddy. All rights reserved.</p>
         </div>
       </div>
     </footer>

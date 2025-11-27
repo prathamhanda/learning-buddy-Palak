@@ -2,8 +2,8 @@ import { User, LearningPath, Progress } from '../types';
 
 export const dummyUser: User = {
   id: '1',
-  name: 'Alex Johnson',
-  email: 'alex@example.com',
+  name: 'Priyanshi Goyal',
+  email: 'pgoyal2_be23@thapar.edu',
   interests: ['Web Development', 'Artificial Intelligence', 'Data Science'],
   goals: ['Build a portfolio website', 'Learn React', 'Understand machine learning basics'],
   level: 'intermediate',
@@ -33,7 +33,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r1',
             title: 'Introduction to HTML',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=UB1O30fR-EE',
             duration: '15 min',
             completed: true
           },
@@ -41,7 +41,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r2',
             title: 'HTML Document Structure',
             type: 'article',
-            url: '#',
+            url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html',
             duration: '10 min',
             completed: true
           }
@@ -58,7 +58,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r3',
             title: 'CSS Selectors and Properties',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=l1mER1bV0N0',
             duration: '20 min',
             completed: false
           },
@@ -66,7 +66,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r4',
             title: 'Flexbox Layout',
             type: 'exercise',
-            url: '#',
+            url: 'https://flexboxfroggy.com/',
             duration: '30 min',
             completed: false
           }
@@ -96,7 +96,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r1',
             title: 'Python Basics',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=8DvywoWv6fI',
             duration: '25 min',
             completed: true
           },
@@ -104,7 +104,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r2',
             title: 'Data Structures in Python',
             type: 'article',
-            url: '#',
+            url: 'https://docs.python.org/3/tutorial/datastructures.html',
             duration: '15 min',
             completed: true
           }
@@ -121,7 +121,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r3',
             title: 'Introduction to Matplotlib',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=3Xc3CA655Y4',
             duration: '20 min',
             completed: false
           },
@@ -129,7 +129,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r4',
             title: 'Creating Interactive Dashboards',
             type: 'exercise',
-            url: '#',
+            url: 'https://plotly.com/dash/',
             duration: '45 min',
             completed: false
           }
@@ -159,7 +159,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r1',
             title: 'Introduction to React',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=Tn6-PIqc4UM',
             duration: '30 min',
             completed: false
           },
@@ -167,7 +167,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r2',
             title: 'Components and Props',
             type: 'article',
-            url: '#',
+            url: 'https://react.dev/learn/passing-props-to-a-component',
             duration: '20 min',
             completed: false
           }
@@ -184,7 +184,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r3',
             title: 'Setting Up React Native',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=0-S5a0eXPoc',
             duration: '25 min',
             completed: false
           },
@@ -192,7 +192,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r4',
             title: 'Building Your First App',
             type: 'exercise',
-            url: '#',
+            url: 'https://reactnative.dev/docs/tutorial',
             duration: '60 min',
             completed: false
           }
@@ -222,7 +222,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r1',
             title: 'Introduction to Machine Learning',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=aircAruvnKk',
             duration: '35 min',
             completed: false
           },
@@ -230,7 +230,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r2',
             title: 'Supervised vs. Unsupervised Learning',
             type: 'article',
-            url: '#',
+            url: 'https://www.ibm.com/topics/supervised-learning',
             duration: '25 min',
             completed: false
           }
@@ -247,7 +247,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r3',
             title: 'Neural Networks Fundamentals',
             type: 'video',
-            url: '#',
+            url: 'https://www.youtube.com/watch?v=aircAruvnKk',
             duration: '40 min',
             completed: false
           },
@@ -255,7 +255,7 @@ export const dummyLearningPaths: LearningPath[] = [
             id: 'r4',
             title: 'Building a Simple Neural Network',
             type: 'exercise',
-            url: '#',
+            url: 'https://playground.tensorflow.org/',
             duration: '75 min',
             completed: false
           }

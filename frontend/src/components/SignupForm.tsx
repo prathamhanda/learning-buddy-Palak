@@ -32,7 +32,7 @@ const SignupForm: React.FC = () => {
     e.preventDefault();
     // In a real app, this would send data to your backend
     console.log('Form submitted:', formData);
-    alert('Registration successful! Welcome to EduSmart.');
+    alert('Registration successful! Welcome to LearningBuddy.');
   };
 
   const nextStep = () => setFormStep(prev => prev + 1);
@@ -77,7 +77,7 @@ const SignupForm: React.FC = () => {
           <div className="mt-12">
             <div className="bg-blue-500 rounded-lg p-4">
               <h4 className="font-medium mb-2 flex items-center">
-                <Award className="h-5 w-5 mr-2" /> Why join EduSmart?
+                <Award className="h-5 w-5 mr-2" /> Why join LearningBuddy?
               </h4>
               <ul className="space-y-2 text-sm text-blue-100">
                 <li>• Personalized learning experiences</li>
@@ -261,7 +261,7 @@ const SignupForm: React.FC = () => {
               <div className="space-y-4 animate-fadeIn">
                 <h3 className="text-xl font-semibold mb-4">Learning Goals</h3>
                 <p className="text-gray-600 mb-4">
-                  Tell us what you want to achieve with EduSmart. This helps us recommend the right learning paths.
+                  Tell us what you want to achieve with LearningBuddy. This helps us recommend the right learning paths.
                 </p>
 
                 <div>

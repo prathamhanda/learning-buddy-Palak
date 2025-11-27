@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Clock, BookOpen, Search, Bell, ChevronDown } from 'lucide-react';
 import Layout from '../components/Layout';
 import DashboardStats from '../components/dashboard/DashboardStats';
@@ -10,6 +10,12 @@ import { dummyUser, dummyLearningPaths } from '../data/dummyData';
 import { Link } from '../components/ui/Link';
 
 const Dashboard: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   // Weekly activity data
   const weeklyData = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -38,34 +44,34 @@ const Dashboard: React.FC = () => {
     <Layout>
       <div className="bg-gray-50 min-h-screen pb-12">
         {/* Dashboard Header */}
-        <div className="bg-white shadow-sm">
+        <div className={`bg-white shadow-sm transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
           <div className="container py-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-2xl font-bold">Dashboard</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Dashboard</h1>
               <div className="flex items-center space-x-4">
-                <div className="relative">
+                <div className="relative group">
                   <input
                     type="text"
                     placeholder="Search courses..."
-                    className="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:shadow-lg transition-all duration-300 focus:scale-105"
                   />
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300" />
                 </div>
-                <button className="relative p-2 text-gray-600 hover:text-gray-900">
-                  <Bell className="h-6 w-6" />
-                  <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
+                <button className="relative p-2 text-gray-600 hover:text-gray-900 hover:scale-110 transition-all duration-300 group">
+                  <Bell className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                  <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full animate-pulse"></span>
                 </button>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 cursor-pointer hover:scale-105 transition-transform duration-300 group">
                   <img 
                     src={dummyUser.avatar || 'https://via.placeholder.com/40'} 
                     alt={dummyUser.name}
-                    className="h-10 w-10 rounded-full object-cover"
+                    className="h-10 w-10 rounded-full object-cover border-2 border-transparent group-hover:border-blue-400 transition-all duration-300"
                   />
                   <div className="hidden md:block">
-                    <p className="font-medium">{dummyUser.name}</p>
-                    <p className="text-xs text-gray-500">{dummyUser.level}</p>
+                    <p className="font-medium group-hover:text-blue-600 transition-colors duration-300">{dummyUser.name}</p>
+                    <p className="text-xs text-gray-500 group-hover:text-blue-400 transition-colors duration-300">{dummyUser.level}</p>
                   </div>
-                  <ChevronDown className="h-4 w-4 text-gray-500" />
+                  <ChevronDown className="h-4 w-4 text-gray-500 group-hover:text-blue-500 group-hover:rotate-180 transition-all duration-300" />
                 </div>
               </div>
             </div>
@@ -74,34 +80,36 @@ const Dashboard: React.FC = () => {
 
         <div className="container mt-8">
           {/* Dashboard Welcome */}
-          <div className="card p-6 mb-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+          <div className={`card p-6 mb-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white transform transition-all duration-700 delay-200 hover:scale-105 hover:shadow-2xl ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex flex-col md:flex-row md:items-center justify-between">
               <div>
-                <h2 className="text-2xl font-bold mb-2">Welcome back, {dummyUser.name}!</h2>
-                <p className="mb-4">Continue your learning journey and achieve your goals.</p>
+                <h2 className="text-2xl font-bold mb-2 animate-pulse">Welcome back, {dummyUser.name}!</h2>
+                <p className="mb-4 hover:text-blue-100 transition-colors duration-300">Continue your learning journey and achieve your goals.</p>
                 <div className="flex items-center space-x-4">
-                  <Link href="/path/1" className="btn bg-white text-blue-700 hover:bg-blue-50">
+                  <Link href="/path/1" className="btn bg-white text-blue-700 hover:bg-blue-50 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
                     Continue Learning
                   </Link>
-                  <div className="flex items-center space-x-1 text-blue-200">
-                    <Clock className="h-5 w-5" />
+                  <div className="flex items-center space-x-1 text-blue-200 hover:text-white transition-colors duration-300">
+                    <Clock className="h-5 w-5 hover:rotate-12 transition-transform duration-300" />
                     <span>Last login: Today, 9:45 AM</span>
                   </div>
                 </div>
               </div>
               <div className="mt-6 md:mt-0 flex items-center">
-                <div className="bg-blue-500 bg-opacity-30 p-4 rounded-lg">
-                  <BookOpen className="h-16 w-16" />
+                <div className="bg-blue-500 bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 transition-all duration-300 hover:scale-110">
+                  <BookOpen className="h-16 w-16 hover:rotate-12 transition-transform duration-500" />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Stats Cards */}
-          <DashboardStats stats={statsData} />
+          <div className={`transform transition-all duration-700 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <DashboardStats stats={statsData} />
+          </div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+          <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8 transform transition-all duration-700 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-8">
               <div>
